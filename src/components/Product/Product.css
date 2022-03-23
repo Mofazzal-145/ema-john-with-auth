@@ -28,7 +28,7 @@
   margin-top: 7px;
   /* letter-spacing: 0.0015em; */
 }
-
+/* cart button  */
 .btn-cart {
   width: 100%;
   background-color: #ffe0b3;
@@ -37,6 +37,7 @@
   position: absolute;
   bottom: 0;
 }
+/* button hover  */
 .btn-cart:hover {
   background-color: orange;
 }
