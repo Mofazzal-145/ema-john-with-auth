@@ -40,6 +40,9 @@
   align-items: center;
   justify-content: center;
 }
+.btn-cart .btn-text {
+  margin-right: 5px;
+}
 /* button hover  */
 .btn-cart:hover {
   background-color: orange;
