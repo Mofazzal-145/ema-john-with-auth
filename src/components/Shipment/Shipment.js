@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Shipment = () => {
+    const [user] = useAuthState(auth);
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
@@ -8,9 +11,9 @@ const Shipment = () => {
     const [error, setError] = useState('');
     // const navigate = useNavigate();
 
-    const handleEmailBlur = event =>{
+    /* const handleEmailBlur = event =>{
         setEmail(event.target.value);
-    }
+    } */
 
     const handleNameBlur = event => {
         setName(event.target.value);
@@ -27,6 +30,8 @@ const Shipment = () => {
 
     const handleCreateUser = event => {
         event.preventDefault();
+        const shipping = {name, email, address, phone};
+        console.log(shipping);
     }
 
     return (
@@ -40,14 +45,14 @@ const Shipment = () => {
                       </div>
                         <div className="input-group">
                                 <label htmlFor="email">Email</label>
-                                <input onBlur={handleEmailBlur} type="email" name="email" id="" required/>
+                                <input value={user?.email} readOnly type="email" name="email" id="" required/>
                             </div>
                       <div className="input-group">
-                          <label htmlFor="password">Address</label>
+                          <label htmlFor="address">Address</label>
                           <input onBlur={handleAddressBlur} type="text" name="address" id="" required/>
                       </div>
                       <div className="input-group">
-                          <label htmlFor="confirm-password">Phone Number</label>
+                          <label htmlFor="phone">Phone Number</label>
                           <input onBlur={handlePhoneBlur} type="text" name="phone number" id="" required/>
                       </div>
                       <p style={{color: 'red'}}>{error}</p>
