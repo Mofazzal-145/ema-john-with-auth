@@ -9,7 +9,7 @@
 8. useCreateUserWithEmailAndPassword copy from react-firebase-hooks
 9. if user is created redirect to the expected page
 10. useSignInWithEmailAndPassword for Sign In.
-11. 
+11. Create RequireAuth component
 12.
 
 */
@@ -18,5 +18,6 @@
 1. npm install -g firebase-tools
 2. firebase login
 3. firebase init
-4. firebase deploy
+4. npm run build
+5. firebase deploy
 */
